@@ -47,7 +47,7 @@ turborepo/
 - [x] skeleton UI (로딩 시 정보 영역)
 - [x] 직접 조회 없이 접근 시 1초 뒤 홈 리다이렉트
 - [x] `/result` 배경 이미지 반영
-- [ ] 404 페이지
+- [x] 404 페이지
 - [x] README 업데이트 (기능별 체크 반영)
 - [x] ESLint/Prettier 설정 적용
 - [ ] 테스트 환경 구성 (Vitest or Playwright 등)
@@ -56,5 +56,5 @@ turborepo/
 
 ## 🚀 배포 주소 및 저장소
 
-- **Vercel**: https://{your-vercel-url}.vercel.app
-- **GitHub**: https://github.com/{your-username}/{repo-name}
+- **Vercel**: https://turborepo-b3ywn550v-kzhxxns-projects.vercel.app
+- **GitHub**: https://github.com/kzhxxn/turborepo
