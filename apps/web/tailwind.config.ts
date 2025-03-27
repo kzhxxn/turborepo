@@ -8,6 +8,9 @@ const config: Pick<Config, 'content' | 'presets' | 'theme'> = {
   presets: [sharedConfig],
   theme: {
     extend: {
+      screens: {
+        '2xl': '1440px',
+      },
       fontFamily: {
         pretendard: ['var(--font-pretendard)'],
       },
