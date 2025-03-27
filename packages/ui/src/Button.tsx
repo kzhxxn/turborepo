@@ -6,11 +6,19 @@ export interface ButtonProps
   children: React.ReactNode;
   className?: string;
   onClick: () => void;
+  isLoading?: boolean; // ✅ 로딩 상태 prop
 }
 
-export const Button = ({ children, className, onClick }: ButtonProps) => {
+export const Button = ({
+  children,
+  className,
+  onClick,
+  isLoading = false,
+  disabled,
+}: ButtonProps) => {
   return (
     <button
+      disabled={disabled || isLoading}
       onClick={onClick}
       className={`
       w-full md:w-[154px] h-[48px] rounded-[12px]
