@@ -1,6 +1,7 @@
 'use client';
 
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 type ImageInfo = {
   id: string;
@@ -16,7 +17,14 @@ interface ImageStore {
   setImage: (image: ImageInfo) => void;
 }
 
-export const useImageStore = create<ImageStore>((set) => ({
-  image: null,
-  setImage: (image) => set({ image }),
-}));
+export const useImageStore = create<ImageStore>()(
+  persist(
+    (set) => ({
+      image: null,
+      setImage: (image) => set({ image }),
+    }),
+    {
+      name: 'image-store', // 로컬스토리지 키 이름
+    }
+  )
+);

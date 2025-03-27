@@ -40,16 +40,17 @@ turborepo/
 ## 🧪 추가 구현 요소 (선택 사항 / 리팩토링 대상)
 
 - [x] 상태 관리: tanstack-query, zustand 적용
-- [ ] debounce/throttle 적용
-- [ ] 로딩 애니메이션 (lottie or CSS)
-- [ ] 조회 이력 캐싱 및 `/result` 자동 리다이렉트
-- [ ] skeleton UI
-- [ ] 직접 조회 없이 접근 시 1초 뒤 홈 리다이렉트
+- [x] 새로 고침 시에도 데이터 유지 (zustand/persist)
+- [x] debounce/throttle 적용 (사진 조회 버튼)
+- [x] 로딩 애니메이션 처리 (버튼 클릭 시 isLoading)
+- [x] 조회 이력 캐싱 및 `/result` 자동 리다이렉트
+- [x] skeleton UI (로딩 시 정보 영역)
+- [x] 직접 조회 없이 접근 시 1초 뒤 홈 리다이렉트
 - [x] `/result` 배경 이미지 반영
-- [x] 404 페이지
-- [x] README 업데이트
-- [ ] ESLint/Prettier 세부 규칙 확립
-- [ ] 테스트 환경 구성 (vitest / playwright 등)
+- [ ] 404 페이지
+- [x] README 업데이트 (기능별 체크 반영)
+- [x] ESLint/Prettier 설정 적용
+- [ ] 테스트 환경 구성 (Vitest or Playwright 등)
 
 ---
 
