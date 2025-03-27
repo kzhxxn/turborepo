@@ -114,7 +114,7 @@ export default function ResultPage() {
 
           <div className='w-full flex justify-center '>
             <Button
-              className='w-full md:w-[154px] h-[48px] bg-black text-white text-[16px] leading-[148%] tracking-[-0.02em] font-semibold rounded-[12px]'
+              className='h-12 rounded-[12px] px-4 bg-black text-white hover:bg-neutral-800 w-full max-w-md text-[16px] leading-[148%] tracking-[-0.02em] font-semibold'
               onClick={() => router.push('/')}
             >
               이전

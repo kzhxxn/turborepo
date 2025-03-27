@@ -11,6 +11,11 @@ const config: Pick<Config, 'content' | 'presets' | 'theme'> = {
       screens: {
         '2xl': '1440px',
       },
+      colors: {
+        'gray-base': '#111111',
+        'gray-hover': '#111111cc',
+        'gray-pressed': '#111111cc',
+      },
       fontFamily: {
         pretendard: ['var(--font-pretendard)'],
       },
