@@ -1,4 +1,3 @@
-
 # 🧩 프로젝트 소개
 
 Next.js 기반의 Turborepo 구조를 활용한 과제형 UI 구현입니다.  
@@ -40,15 +39,15 @@ turborepo/
 
 ## 🧪 추가 구현 요소 (선택 사항 / 리팩토링 대상)
 
-- [ ] 상태 관리: tanstack-query, zustand 적용
+- [x] 상태 관리: tanstack-query, zustand 적용
 - [ ] debounce/throttle 적용
 - [ ] 로딩 애니메이션 (lottie or CSS)
 - [ ] 조회 이력 캐싱 및 `/result` 자동 리다이렉트
 - [ ] skeleton UI
 - [ ] 직접 조회 없이 접근 시 1초 뒤 홈 리다이렉트
-- [ ] `/result` 배경 이미지 반영
-- [ ] 404 페이지
-- [ ] README 업데이트
+- [x] `/result` 배경 이미지 반영
+- [x] 404 페이지
+- [x] README 업데이트
 - [ ] ESLint/Prettier 세부 규칙 확립
 - [ ] 테스트 환경 구성 (vitest / playwright 등)
 
@@ -56,5 +55,5 @@ turborepo/
 
 ## 🚀 배포 주소 및 저장소
 
-- **Vercel**: https://{your-vercel-url}.vercel.app  
+- **Vercel**: https://{your-vercel-url}.vercel.app
 - **GitHub**: https://github.com/{your-username}/{repo-name}

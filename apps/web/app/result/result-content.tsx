@@ -1,7 +1,8 @@
 'use client';
 
-import { useSearchParams, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+import { useImageStore } from '../store/useImageStore';
 import { Button } from '@repo/ui/Button';
 import { Header } from '@repo/ui/Header';
 
@@ -50,26 +51,19 @@ function InfoBox({ label, value, isLink }: InfoBoxProps) {
 }
 
 export function ResultContent() {
-  const searchParams = useSearchParams();
   const router = useRouter();
-  const [data, setData] = useState<any>(null);
+  const image = useImageStore((state) => state.image);
 
   useEffect(() => {
-    const raw = searchParams.get('data');
-    if (raw) {
-      try {
-        const parsed = JSON.parse(decodeURIComponent(raw));
-        setData(parsed);
-      } catch (err) {
-        console.error('Invalid JSON');
+    if (!image) {
+      const timeout = setTimeout(() => {
         router.push('/');
-      }
-    } else {
-      router.push('/');
+      }, 1000);
+      return () => clearTimeout(timeout);
     }
-  }, [searchParams, router]);
+  }, [image, router]);
 
-  if (!data) return null;
+  if (!image) return null;
 
   return (
     <main
@@ -88,22 +82,22 @@ export function ResultContent() {
 
       <section className='flex-1 flex flex-col 2xl:flex-row items-center justify-center gap-6 p-4'>
         <img
-          src={data.download_url}
-          alt={data.author}
+          src={image.download_url}
+          alt={image.author}
           className='w-full md:w-[768px] rounded-[20px]'
         />
         <div className='flex flex-col md:w-[768px] h-[504px] md:h-[388px] gap-4 text-black text-left w-full'>
           <CardBox flex>
-            <InfoBox label='id' value={data.id} />
-            <InfoBox label='author' value={data.author} />
+            <InfoBox label='id' value={image.id} />
+            <InfoBox label='author' value={image.author} />
           </CardBox>
           <CardBox flex>
-            <InfoBox label='width' value={data.width.toLocaleString()} />
-            <InfoBox label='height' value={data.height.toLocaleString()} />
+            <InfoBox label='width' value={image.width.toLocaleString()} />
+            <InfoBox label='height' value={image.height.toLocaleString()} />
           </CardBox>
           <CardBox>
-            <InfoBox label='url' value={data.url} isLink />
-            <InfoBox label='download_url' value={data.download_url} isLink />
+            <InfoBox label='url' value={image.url} isLink />
+            <InfoBox label='download_url' value={image.download_url} isLink />
           </CardBox>
 
           <div className='w-full flex justify-center '>
