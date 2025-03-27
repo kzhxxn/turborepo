@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './styles.css';
 interface HeaderProps {
   name?: string;
   color?: string;
